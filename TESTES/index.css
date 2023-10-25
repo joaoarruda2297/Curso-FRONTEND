@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+    color: white;
+}
+.Titulo{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.MenuGeral{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.MenuGeral span{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+#itemMeio{
+    text-align: center;
+}
+#nome{
+    color: rgb(24, 124, 25);
+}
+img{
+    width: 100%;
+}
