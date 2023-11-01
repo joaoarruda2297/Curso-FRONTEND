@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 62.5%;
+}
+body{
+    background: linear-gradient(288deg, #C2E9FB 0%, #A1C4FD 100%);
+    font-size: 1.6rem;
+
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+main{
+    background: #FFF;
+    border-radius: .6rem;
+    box-shadow: .0rem .2rem .4rem .0rem rgba(0, 0, 0, 0.10);
+    padding: 48px 64px 64px 64px;
+
+    width: min(42.8rem, 90%);
+    margin-top: -12rem;
+}
