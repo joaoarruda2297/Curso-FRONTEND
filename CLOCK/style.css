@@ -1,13 +1,16 @@
-#txt{
-    font-size: 200px;
-    color: white;
-}
-
-body{
-    background-color: black;
+body {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
+}
+
+#txt {
+    font-size: 20vw; /* Tamanho de fonte responsivo em relação à largura da viewport */
+    color: white;
+}
+
+body {
+    background-color: black;
 }
