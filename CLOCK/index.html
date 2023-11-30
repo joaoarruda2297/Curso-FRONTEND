@@ -10,21 +10,21 @@
 <body>
     <div id="txt"></div>
 
+    <noscript>Teste teste teste</noscript>
+
     <script>
         function startTime() {
-            const today = new Date();
-            let h = today.getHours();
-            let m = today.getMinutes();
-            m = checkTime(m);
-            document.getElementById('txt').innerHTML = h + ":" + m;
-            setTimeout(startTime, 1000);
-        }
+            const options = {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: false, // Use formato de 24 horas
+                timeZone: 'America/Sao_Paulo'
+            };
 
-        function checkTime(i) {
-            if (i < 10) {
-                i = "0" + i;
-            }  // add zero in front of numbers < 10
-            return i;
+            const today = new Date().toLocaleTimeString('en-US', options);
+            document.getElementById('txt').innerHTML = today;
+
+            setTimeout(startTime, 1000);
         }
 
         // Iniciar o relógio diretamente
