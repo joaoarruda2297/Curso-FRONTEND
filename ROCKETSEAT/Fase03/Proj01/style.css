@@ -1,33 +1,44 @@
 /*font-family: 'Archivo', sans-serif;
 font-family: 'Poppins', sans-serif;*/
-
-body{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+*{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-#box{
+body, input, button, textarea{
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #E5E5E5;
+}
+body::before{
+    content: '';
     width: 100%;
     height: 368px;
-    position: fixed;
+
+    position: absolute;
     top: 0;
-    right: 0;
-    background-color: black;
+    left: 0;
     z-index: -1;
+    background-color: #121214;
+}
+.page{
+    width: 736px;
+    margin: auto;
 }
 header{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 352px; 
+    margin-top: 74px;
+    width: 319px;
 }
 header h1{
     font-family: 'Archivo', sans-serif;
-    font-weight: 700;
-    line-height: 42px;
     font-size: 36px;
-    color: #FFFFFF;
+    font-weight: 700;
+    color: #fff;
+    line-height: 42px;
     width: 319px;
+
+    margin-bottom: 24px;
 }
 header p{
     color: #42D3FF;
@@ -36,17 +47,62 @@ header p{
     width: 283px;
 }
 form{
-    width: 736px;
-    height: 1430px;
-    background-color: #FFFFFF;
-    margin: 0 auto;
+    background-color: #FAFAFC;
+    margin-top: 38px;
+    min-height: 300px;
+    border-radius: 8px 8px 0 0;
+    padding: 64px;
 }
-form h1{
+fieldset{
+    border: none;
+}
+fieldset legend{
+    color: #32264D;
     font-family: 'Archivo', sans-serif;
+    font-size: 24px;
     font-weight: 600;
     line-height: 34px;
-    font-size: 24px;
+
+    width: 100%;
+
+    border-bottom: 1px solid #E6E6F0;
+    padding-bottom: 16px;
 }
-#inpOne{
+.input-wrapper{
+    margin-top: 24px;
     display: flex;
+    flex-direction: column;
+}
+.input-wrapper label{
+    font-size: 14px;
+    line-height: 24px;
+
+    color: #4E4958;
+
+    margin-bottom: 8px;
+}
+.input-wrapper label span{
+    margin-left: 12px;
+    color: #6c6a71;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.input-wrapper input, .input-wrapper textarea{
+    background-color: #FAFAFC;
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+
+    height: 56px;
+
+    padding: 0 24px;
+
+    font-size: 16px;
+    line-height: 26px;
+    color: #6c6a71;
+}
+
+.input-wrapper textarea{
+    height: 168px;
+    padding: 0;
 }
