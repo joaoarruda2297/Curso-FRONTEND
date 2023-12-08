@@ -1,0 +1,149 @@
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Staatliches', sans-serif; */
+*{
+    margin: 0;
+    padding: 0;
+}
+body,input,button,textarea{
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: #EFEFEF;
+}
+body::before{
+    content: '';
+    height: 436px;
+    width: 100%;
+
+    background-color: #535971;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.page{
+    width: 750px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+header{
+    color: #FFF;
+    width: 417px;
+    margin-top: 140px;
+}
+h1{
+    font-family: 'Staatliches', sans-serif;
+    font-weight: 400;
+    line-height: normal;
+    font-size: 48px;
+}
+p{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+form{
+    background-color: #FFF;
+    border-radius: 20px 20px 0 0;
+    padding: 64px;
+    margin-top: 44px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+fieldset{
+    color: #4E4958;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+
+    border: none;
+}
+legend{
+    color: #535971;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 34px;
+
+    width: 100%;
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+
+    border-bottom: 1px solid #E6E6F0;
+}
+#name,.mentoring{
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+}
+.mentoring{
+    gap: 32px;
+}
+.input-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    margin-bottom: 16px;
+}
+.input-wrapper label{
+    margin-bottom: 8px;
+}
+.input-wrapper input{
+    height: 56px;
+    border-radius: 8px;
+    border: 1px solid #E6E6F0;
+    padding: 0 24px;
+}
+.input-wrapper label span{
+    margin-left: 7px;
+    color: #C1BCCC;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+}
+.input-wrapper label span:hover{
+    color: #5b5b5b;
+}
+.time{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+h2{
+    color: #535971;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 34px;
+    margin-bottom: 8px;
+}
+footer{
+    border-radius: 0px 0px 20px 20px;
+    background: #535971;
+    height: 160px;
+
+    display: flex;
+    flex-direction: column;
+}
+footer .button{
+    width: 608px;
+    height: 55.652px;
+    padding: 15px 40px;
+    margin: auto auto;
+    border-radius: 20px;
+    background: #FF5374;
+    border: none;
+
+    font-family: 'Staatliches', sans-serif;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+}
+footer .button:hover{
+    background: #a4354b;
+    cursor: pointer;
+}
