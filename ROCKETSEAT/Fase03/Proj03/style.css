@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Source Serif 4', serif;
+    background: #FFF;
+}
+main{
+    color: #A54328;
+    margin-inline: auto;
+    max-width: 32rem;
+    padding: 5.6rem 4rem;
+
+    box-sizing: content-box;
+}
+#right h1{
+    margin-top: 3.4rem;
+    margin-bottom: 3.614rem;
+}
+h1{
+    font-size: 2.8343rem;
+    font-weight: 700;
+}
+img{
+    width: 30.0rem;
+    height: 17.7886rem;
+    margin-top: 4.677rem;
+    margin-bottom: 4.677rem;
+}
+p, #right{
+    font-size: 1.4171rem;
+    font-weight: 400;
+}
+h3{
+    font-weight: 700;
+}
+ul,ol{
+    margin-left: 2.5rem;
+}
+button{
+    font-family: 'Source Serif 4', serif;
+    width: 9.424rem;
+    height: 3.188527rem;
+    border-radius: 5.669px;
+    border: none;
+
+    background: #A54328;
+    color: #FFF;
+
+    font-size: 0.992rem;
+    font-weight: 500;
+    line-height: 1.7006rem;
+
+    margin-top: 1.701rem;
+}
+button:hover{
+    background: #572d22;
+}
+@media (min-width: 60em){
+    main{
+        display: flex;
+        max-width: 120.0rem;
+        gap: 18.9rem;
+    }
+    h1{
+        font-size: 4.0rem;
+    }
+    #right h1{
+        margin: 0;
+    }
+    body{
+        background: url(images/paper.png), rgb(211, 211, 211) 50% / cover no-repeat;
+        line-height: normal;
+    }
+    button{
+        width: 13.3rem;
+        height: 4.5rem;
+
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 2.4rem;
+    }
+    img{
+        margin-top: 6.6rem;
+        margin-bottom: 6.6rem;
+
+        width: 41.1rem;
+        height: 24.370352rem;
+    }
+    #recipe{
+        margin: 5.1rem auto 2.4rem;
+        width: 52.5rem;
+    }
+    p, #right{
+        font-size: 2.0rem;
+    }
+    p{
+        width: 43.5rem;
+    }
+}
+
+
