@@ -9,10 +9,12 @@
     font-size: 62.5%;
     font-family: 'Mulish', sans-serif;
     font-weight: 400;
+    
 }
 body{
     font-size: 1.6rem;
     background-color: #FFF;
+    line-height: 160%;
 }
 #app{
     display: grid;
@@ -76,9 +78,9 @@ main{
     width: min(45rem, 100%);
     margin: 0 auto;
 }
-main img{
+main #main-img{
     aspect-ratio: 16/9;
-    width: min(45rem, 100%);
+    width: 100%;
     margin-bottom: 1.5rem;
 }
 .container{
@@ -87,7 +89,6 @@ main img{
 h1{
     font-size: 2.4rem;
     font-weight: 700;
-    line-height: 160%;
     color: #202024;
 }
 #likes{
@@ -110,12 +111,10 @@ h1{
 }
 .container p{
     font-size: 1.6rem;
-    line-height: 160%;
 }
 h2{
     font-size: 2.4rem;
     font-weight: 700;
-    line-height: 160%;
 }
 #articles{
     display: flex;
@@ -137,7 +136,39 @@ h3{
 }
 .article-info p{
     font-size: 1.4rem;
-    line-height: 160%;
     margin-top: 0.5rem;
     width: 21.5rem;
 }
+footer{
+    background-color:#387E96;
+    color: #FFFFFF;
+    padding: 2.65rem 1.6rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/*animation*/
+main #main-img{
+    animation: appear 5s ease-in-out infinite alternate;
+}
+@keyframes appear{
+    0%{
+        filter: hue-rotate(7deg) contrast(100%) saturate(0%);
+    }
+    100%{
+        filter: hue-rotate(0deg) contrast(100%) saturate(175%);
+    }
+}
+#likes button:hover{
+    animation: grow .3s forwards;
+    cursor: pointer;
+}
+@keyframes grow{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.3);
+    }
+}
+
