@@ -82,6 +82,7 @@ main #main-img{
     aspect-ratio: 16/9;
     width: 100%;
     margin-bottom: 1.5rem;
+    grid-area: A;
 }
 .container{
     padding: 1.6rem 2.6rem;
@@ -145,6 +146,7 @@ footer{
     padding: 2.65rem 1.6rem;
     text-align: center;
     margin-top: 4rem;
+    width: 100%;
 }
 
 /*animation*/
@@ -169,6 +171,47 @@ main #main-img{
     }
     100%{
         transform: scale(1.3);
+    }
+}
+
+/*media desktop*/
+@media (min-width: 60em){
+    header{
+        padding: 1.6rem 10.9rem;
+    }
+    #logo img{
+        position: absolute;
+        top: 2.7rem;
+        left: 11.67rem;
+        z-index: 1;
+    }
+    main{
+        display: grid;
+        grid-template-areas: "A C"
+                             "B C";
+        grid-template-columns: 80rem max-content;
+        gap: 3.2rem;
+        margin: 4.4rem 10.9rem;
+        
+    }
+    body{
+        background-color: #F4FCFF;
+    }
+    #left{
+        grid-area: B;
+    }
+    #right{
+        grid-area: C;
+    }
+    #title{
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .container{
+        padding: 0;
     }
 }
 
