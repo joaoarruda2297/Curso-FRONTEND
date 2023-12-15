@@ -1,0 +1,115 @@
+body{
+    background-color: rgba(147, 112, 216, 0.559);
+}
+.square{
+    width: 4rem;
+    height: 4rem;
+    background-color: #FFF;
+    opacity: .6;
+}
+.triangle,.triangle2{
+    width: 0;
+    height: 0;
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+    border-bottom: 4rem solid #FFF;
+    opacity: .6;
+}
+.circle{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #FFF;
+    opacity: .6;
+}
+.pentagon{
+    position: relative;
+	width: 4rem;
+	height: 4rem;
+	background: #FFF;
+    opacity: .6;
+	clip-path: polygon( 50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
+}
+
+
+
+
+/*fazendo o quadrado ir da direita pra esquerda*/
+.square{
+    animation: move 1s;
+    animation-fill-mode: forwards;/*mantem o quadrado no estado final*/
+}
+@keyframes move{
+    0%{
+        
+    }
+    100%{
+        transform: translateX(calc(100vw - 100% - 16px));
+    }
+}
+
+/*fazendo o triangulo ir da esquerda pra direita e voltar*/
+/*1a forma*/
+.triangle{
+    animation: move 1s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes moveT{
+    0%{
+        
+    }
+    100%{
+        transform: translateX(calc(100vw - 100% - 16px));
+    }
+}
+.triangle2{
+    animation: moveT2 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes moveT2{
+    0%{
+        
+    }
+    50%{
+        transform: translateX(calc(100vw - 100% - 16px));
+    }
+}
+
+/*fazendo o circulo ir da direita pra esquerda esperando 2s antes*/
+.circle{
+    animation: move 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    /*animation-timing-function: cubic-bezier(1, 1.02, 0.4, 1.26);*/
+    animation-timing-function: steps(5);
+}
+
+/*fazendo o pentagono animado parar quando colocar o mouse em cima
+fazendo ele piscar sem parar tbm*/
+.pentagon{
+    animation: moveP 3s, blink 1s infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+.pentagon:hover{
+    animation-play-state: paused;
+}
+@keyframes moveP{
+    0%{
+
+    }
+    100%{
+        transform: translateX(calc(100vw - 100% - 16px));
+    }
+}
+@keyframes blink{
+    50%{
+        opacity: 1;
+        /*background-color: aqua;*/
+    }
+}

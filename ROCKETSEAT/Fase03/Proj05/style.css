@@ -1,0 +1,174 @@
+/*font-family: 'Mulish', sans-serif;*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -webkit-osx-font-smoothing: grayscale;
+}
+:root{
+    /*lembrar do detalhe que posso trocar as cores de hexadecimal para hsl, assim posso criar uma var(--hue) e mudar a cor de todos os elementos encaixando nas cores e mudando o site inteiro de uma vez só*/
+    font-size: 62.5%;
+    --color-base-white: #FFFFFF;
+    --color-base-gray100: #F5F5F5;
+    --color-base-gray300: #8d8d99;
+    --color-base-gray900: #202024;
+
+    font-family: 'Mulish', sans-serif;
+}
+body{
+    font-size: 1.6rem;
+    background-color: var(--color-base-white);
+}
+#app{
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    height: 100vh;
+}
+.container{
+    padding: 1.6rem 3.2rem;
+    width: min(112rem, 100%);
+    margin: 0 auto;
+}
+main{
+    overflow-y: auto;
+    background-color: var(--color-base-gray100);
+}
+
+a{
+    text-decoration: none;
+}
+nav ul li{
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 160%;
+    list-style: none;
+}
+ul li:nth-child(1){
+    color: var(--color-base-gray300);
+}
+ul li:nth-child(2){
+    color: var(--color-base-gray900);
+}
+header,nav,nav ul{
+    display: flex;
+    align-items: center;
+    gap: 7.2rem;
+}
+header form{
+    flex: 1;
+}
+.input-wrapper input{
+    border-radius: .5rem;
+    border: none;
+    background: rgba(238, 238, 238);
+
+    width: 100%;
+    padding: 1.6rem;
+
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    opacity: 0.56;
+}
+.input-wrapper label{
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+.avatar{
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+/*galeria*/
+main h1{
+    padding-top: 2rem;
+    font-size: 2.4rem;
+}
+.gallery{
+    margin-top: 3.2rem;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2.2rem;
+}
+.item{
+    background-color: var(--color-base-white);
+    border-radius: .8rem;
+    overflow: hidden;
+}
+.item img{
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+
+    transition-property: filter, transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
+
+    display: block;
+}
+.item img:hover{
+    filter: hue-rotate(7deg) contrast(130%) saturate(200%);
+    transform: scale(1.1) rotate(-2deg);
+}
+.details{
+    padding: 2.2rem;
+    background-color: var(--color-base-white);
+    z-index: 1;
+    position: relative;
+}
+.details h2{
+    font-size: 1.8rem;
+}
+.tags{
+    margin-top: 1rem;
+}
+.tags span{
+    padding: .6rem;
+    background-color: var(--color-base-gray100);
+    border-radius: .4rem;
+
+    line-height: 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+footer p{
+    text-align: center;
+    padding: 1.6rem;
+    font-weight: 600;
+    color: #323238;
+}
+
+header{
+    --startY: -100%;
+    animation: move .3s;
+}
+footer{
+    --startY: 100%;
+    animation: move .5s;
+}
+@keyframes move{
+    0%{
+        transform: translateY(var(--startY));
+    }
+}
+
+.item{
+    --delay: .3s;
+    animation: appear 1s var(--delay) backwards;
+}
+@keyframes appear{
+    0%{
+        opacity: 0;
+        transform: scale(.7);
+    }
+    50%{
+        transform: scale(1.09);
+    }
+}
