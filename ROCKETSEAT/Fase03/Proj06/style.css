@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -webkit-osx-font-smoothing: grayscale;
+}
+:root{
+    font-size: 62.5%;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+}
+body{
+    font-size: 1.6rem;
+    background-color: #FFF;
+}
+#app{
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    height: 100vh;
+}
+header{
+    padding: 1.6rem 2.8rem;
+    background-color: #065E7C;
+    
+    display: flex;
+    align-items: center;
+    gap: 2.55rem;
+}
+#logo .circle{
+    width: 4rem;
+    height: 4rem;
+    background-color: #F4FCFF;
+    border-radius: 50%;
+    position: relative;
+    z-index: 0;
+}
+#logo img{
+    position: absolute;
+    top: 2.7rem;
+    left: 3.55rem;
+    z-index: 1;
+}
+header form{
+    flex: 1;
+}
+.input-wrapper label{
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+.input-wrapper input{
+    width: 100%;
+    padding: 1.2rem 1.6rem;
+    
+    border: none;
+    border-radius: .4rem;
+
+    background-color: rgba(255, 255, 255, 0.20);
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 100%;
+}
+.input-wrapper input::placeholder{
+    color: #FFFFFF;
+}
+.avatar{
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+}
+main{
+    /*centralizando*/
+    width: min(45rem, 100%);
+    margin: 0 auto;
+}
+main img{
+    aspect-ratio: 16/9;
+    width: min(45rem, 100%);
+    margin-bottom: 1.5rem;
+}
+.container{
+    padding: 1.6rem 2.6rem;
+}
+h1{
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 160%;
+    color: #202024;
+}
+#likes{
+    display: flex;
+    gap: 1.2rem;
+    margin-top: .8rem;
+    margin-bottom: 3.1rem;
+}
+#likes button{
+    background-color: #065E7C;
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    border-radius: 50%;
+    padding: 1.2rem;
+}
+#likes button img{
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.container p{
+    font-size: 1.6rem;
+    line-height: 160%;
+}
+h2{
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 160%;
+}
+#articles{
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+.article{
+    display: flex;
+    gap: 1.6rem;
+}
+.article img{
+    width: 15.1rem;
+    height: 8.4rem;
+    margin: auto 0;
+}
+h3{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.article-info p{
+    font-size: 1.4rem;
+    line-height: 160%;
+    margin-top: 0.5rem;
+    width: 21.5rem;
+}
