@@ -110,9 +110,6 @@ h1{
     width: 1.6rem;
     height: 1.6rem;
 }
-.container p{
-    font-size: 1.6rem;
-}
 h2{
     font-size: 2.4rem;
     font-weight: 700;
@@ -190,10 +187,14 @@ main #main-img{
         grid-template-areas: "A C"
                              "B C";
         grid-template-columns: 80rem max-content;
+        grid-template-rows: max-content 1fr;
+        /*observação especial para o grid-template-rows: max-content 1fr;  Como a coluna 2 vulgo C C nao possui divisão de linhas, ela ignora a propriedade, apenas se valida na coluna 1 vulgo A B*/
         gap: 3.2rem;
-        margin: 4.4rem 10.9rem;
-        
+        width: 100%;
+        justify-content: center;
+        margin-top: 4.2rem;
     }
+    
     body{
         background-color: #F4FCFF;
     }
