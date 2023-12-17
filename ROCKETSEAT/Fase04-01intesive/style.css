@@ -36,16 +36,20 @@ main{
     flex-direction: column;
     align-items: center;
 }
+#welcome #text{
+    text-align: center;
+    margin: 1.7rem auto .5rem;
+}
 #welcome h1{
     font-size: 3.2rem;
 
-    margin: 1.7rem auto .5rem;
+    margin-bottom: .5rem;
 }
 #welcome h3{
     font-size: 2rem;
     font-weight: 600;
 }
-#welcome img:nth-child(4){
+#welcome #text img{
     margin: 3.5rem auto 9.3rem;
 }
 
@@ -140,3 +144,68 @@ footer{
     text-align: center;
     padding: 3.2rem;
 }
+
+@media (min-width: 70em){
+    #welcome{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2.8rem;
+        padding: 0 2.964rem 10.3rem 10.9rem;
+    }
+    #welcome #text{
+        text-align: left;
+        margin: 0;
+    }
+    #text h1{
+        margin-top: 31.2rem;
+        font-size: 5.8287rem;
+    }
+    #text h3{
+        margin-bottom: 17.9rem;
+        font-size: 3.2rem;
+    }
+    #welcome img:nth-child(1){
+        margin: 0;
+        width: 71.9rem;
+    }
+    #welcome #text img{
+        margin: 0;
+    }
+    #advertising{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6rem;
+        padding: 6.4rem 11.1rem;
+    }
+    .ad{
+        width: 36.6rem;
+        margin: 0 auto;
+        padding: 3.2rem 1.3rem 7.2rem 3.2rem;
+    }
+    .ad img{
+        width: 9.7rem;
+    }
+    .ad h2{
+        font-size: 3.5302rem;
+    }
+    .ad p{
+        font-size: 1.9381rem
+    }
+    form{
+        background: url(images/imagebg.png) var(--color-barely-white) 50% / cover no-repeat;
+        background-position: 100% 100%;
+        background-size: 44.72% ;
+
+        padding: 9.5rem 10.9rem;
+    }
+    form legend{
+        margin-bottom: 3rem;
+        font-size: 4.2rem;
+    }
+    input,textarea{
+        width: 59.2rem;
+    }
+}
+
