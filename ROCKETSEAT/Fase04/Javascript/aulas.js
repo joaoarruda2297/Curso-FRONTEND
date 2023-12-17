@@ -56,7 +56,7 @@ for(let char of nome1)
 
 for(let nome1 of names)
 {
-    console.log(name)
+    console.log(names)
 }
 
 let person =
