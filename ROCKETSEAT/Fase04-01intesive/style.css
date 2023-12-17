@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 62.5%;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    --color-pink: #B52184;
+    --color-purple: #312D64;
+    --color-barely-white: #F9F4FB;
+    --color-white: #FFFFFF;
+}
+body{
+    background-color: var(--color-barely-white);
+    font-size: 1.6rem;
+}
+h1,h2,legend{
+    color: var(--color-pink);
+    font-weight: 900;
+}
+h3, main p, input::placeholder{
+    color: var(--color-purple)
+}
+#app{
+    display: grid;
+    grid-template-rows: max-content 1fr;
+}
+main{
+    width: 100%;
+    margin: 0 auto;
+}
+#welcome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#welcome h1{
+    font-size: 3.2rem;
+
+    margin: 1.7rem auto .5rem;
+}
+#welcome h3{
+    font-size: 2rem;
+    font-weight: 600;
+}
+#welcome img:nth-child(4){
+    margin: 3.5rem auto 9.3rem;
+}
+
+#advertising{
+    background: linear-gradient(96deg, #343193 0%, #302C63 99.68%);
+    padding: 5.5rem 3.9rem;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4.966rem;
+}
+.ad{
+    background-color: var(--color-white);
+    border-radius: 1.9865rem;
+    padding: 2.649rem;
+    width: 35.2rem;
+}
+.ad h2{
+    margin-top: 3.311rem;
+    margin-bottom: 1.986rem;
+    font-size: 29.219px;
+}
+
+.ad p{
+    width: 26.5rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 7.8rem 4rem 6.5rem;
+}
+form legend{
+    font-size: 3.2rem;
+    margin-bottom: 4.3rem;
+}
+
+#inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    width: 100%;
+}
+
+
+input,textarea{
+    width: 35.2rem;
+    padding: 1.2rem 1.6rem 1.2rem 3.8rem;
+    border-radius: 1.6rem;
+    border: .15rem solid var(--color-purple);
+    font-family: 'Mulish', sans-serif;
+}
+input::placeholder,textarea::placeholder{
+    font-size: 1.6rem;
+    color: var(--color-purple);
+    line-height: 100%;
+    font-family: 'Mulish', sans-serif;
+}
+#name{
+    background: url(images/person.svg) no-repeat 0.8rem 0.8rem / 2.4rem 2.4rem;
+}
+#email{
+    background: url(images/at.svg) no-repeat 0.8rem 0.8rem / 2.4rem 2.4rem;
+}
+#message{
+    background-color: var(--color-barely-white);
+    padding: 1.2rem 1.6rem;
+    height: 12.6rem;
+}
+button{
+    height: 4.5rem;
+    width: 15.1rem;
+    padding: 1.6rem;
+    
+    background: linear-gradient(96deg, #343193 0%, #302C63 99.68%);
+    border: none;
+    border-radius: 1.6rem;
+
+    color: var(--color-white);
+    font-size: 1.4rem;
+}
+
+footer{
+    background: linear-gradient(96deg, #343193 0%, #302C63 99.68%);
+    height: 7.8rem;
+
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 1.9381rem;
+
+    text-align: center;
+    padding: 3.2rem;
+}
