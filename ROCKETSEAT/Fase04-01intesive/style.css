@@ -209,3 +209,35 @@ footer{
     }
 }
 
+.ad:hover{
+    animation: shake 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: rotate3d(1,0,0, 180deg)
+    }
+    100% {
+        transform: rotate3d(0,0,0, 180deg)
+    }
+}
+
+#welcome #text img:hover{
+    animation: showTheWay 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes showTheWay {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+}
+
+
