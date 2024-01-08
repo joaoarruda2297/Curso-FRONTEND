@@ -1,3 +1,5 @@
+import {Modal} from './modal.js';
+
 //variaveis
 const form = document.querySelector('form');
 const inputWeight = document.querySelector('#weight');
@@ -11,23 +13,7 @@ form.onsubmit = function () {}
 form.onsubmit = () => {}
 form.onsubmit = handleSubmit;
 function handleSubmit(){}*/
-const Modal = {
 
-    wrapper: document.querySelector('.modal-wrapper'),
-    message: document.querySelector('h2 span'),
-    buttonClose: document.querySelector('.close'),
-
-    open(){
-        Modal.wrapper.classList.add('open');
-    },
-    close(){
-        Modal.wrapper.classList.remove('open');
-    }
-}
-
-Modal.buttonClose.onclick = function() {
-    Modal.close();
-};
 form.onsubmit = function(e) {
     e.preventDefault();
     const weight = Number(inputWeight.value);
