@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: red;
+}
+h1{
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    color: white;
+}
+button{
+    width: 100px;
+    height: 20px;
+}
+#bot1{
+    position: absolute;
+    left: calc(50% - 110px);
+}
+#bot2{
+    position: absolute;
+    left: calc(50% + 10px);
+}
