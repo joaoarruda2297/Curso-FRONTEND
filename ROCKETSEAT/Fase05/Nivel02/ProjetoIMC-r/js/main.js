@@ -1,4 +1,5 @@
 import {Modal} from './modal.js';
+import {ModalError} from './alert-error.js';
 
 //variaveis
 const form = document.querySelector('form');
@@ -21,17 +22,20 @@ form.onsubmit = function(e) {
 
     let imc = IMC(weight, height);
 
-    if(imc != 'NaN' && imc != 'Infinity') {
+    if(imc != 'NaN' && imc != 'Infinity' && imc > 0 ) {
         Modal.message.innerText = `Seu IMC é ${imc}`;
+        Modal.open();
     }
     else{
-        Modal.message.innerText = "Digite valores válidos!";
+        ModalError.open();
     }
 
-    Modal.open();
+    inputHeight.value = "";
+    inputWeight.value = "";
 }
 
 function IMC(weight, height) {
     height = height/100;
     return (weight / (height * height)).toFixed(2);
 }
+
