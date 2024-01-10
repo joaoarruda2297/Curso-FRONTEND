@@ -27,7 +27,7 @@ inputElement.addEventListener("input", function(e){
 });
 
 function handleClick(event) {
-    event.preventDefault();//nao faca padrão
+    event.preventDefault();//nao faca padrão que é recarregar a page
     const inputNumber = document.querySelector("#inputNum");
 
     if (Number(inputNumber.value) == numRand) {
