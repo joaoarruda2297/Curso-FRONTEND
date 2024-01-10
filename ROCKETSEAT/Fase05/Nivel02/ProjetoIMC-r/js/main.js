@@ -15,6 +15,8 @@ form.onsubmit = () => {}
 form.onsubmit = handleSubmit;
 function handleSubmit(){}*/
 
+inputWeight.oninput = () => ModalError.close();
+inputHeight.oninput = () => ModalError.close();
 form.onsubmit = function(e) {
     e.preventDefault();
     const weight = Number(inputWeight.value);
