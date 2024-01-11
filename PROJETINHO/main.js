@@ -22,7 +22,7 @@ function changePosition() {
     }
 }
 
-const bgAudio = new Audio('./bg-audio.mp3');
+const bgAudio = new Audio('./audio.mp3');
 const botaoSim = document.querySelector('#bot1');
 botaoSim.addEventListener('click', test);
 function test(){
