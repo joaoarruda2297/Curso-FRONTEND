@@ -21,3 +21,10 @@ function changePosition() {
         botao.style.top = `${y}vh`;
     }
 }
+
+const bgAudio = new Audio('./bg-audio.mp3');
+const botaoSim = document.querySelector('#bot1');
+botaoSim.addEventListener('click', test);
+function test(){
+    bgAudio.play();
+}
