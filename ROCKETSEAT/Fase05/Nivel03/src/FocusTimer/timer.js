@@ -6,6 +6,9 @@ import * as sounds from './sounds.js'
 let isPlaying = false;
 
 export function countdown(){
+
+    clearTimeout(state.countdownId);
+
     if(!state.isRunning){
         isPlaying = false;
         return;
@@ -34,7 +37,7 @@ export function countdown(){
 
     updateDisplay(minutes, seconds);
 
-    setTimeout(() => {countdown()}, 1000);
+    state.countdownId = setTimeout(() => countdown(), 1000);
 }
 
 export function updateDisplay(minutes, seconds){
