@@ -14,13 +14,12 @@ export function registerControls() {
 export function registerSounds() {
     el.sounds.addEventListener('click', (event) => {
         const sound = event.target.dataset.action;
-        const typeSound = event.target.dataset.actiontype;
+        const typeSound = event.target.id;
+
         if (typeof actions[sound] != "function") {
             return;
         }
         actions[sound](typeSound);
-        console.log(sound);
-        console.log(typeSound);
     });
 }
 
