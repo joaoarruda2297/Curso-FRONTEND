@@ -1,32 +1,13 @@
-const routes = {
-    "/about": "/pages/about.html",
-    "/contact": "/pages/contact.html",
-    "/404": "/pages/404.html",
-    "/": "/pages/home.html",
-}
+import {Router}  from "./router.js";
 
-function route(event){
-    event = event || window.event;//se o evento não existir, ele vai ser igual ao window.event
-    event.preventDefault();//nao faça o padrão, que é ir para outra página
-    window.history.pushState({}, "", event.target.href)//adiciona o evento ao histórico do navegador
+const router = new Router();
 
-    handle();
-}
+router.add("/", "/pages/home.html");
+router.add("/about", "/pages/about.html");
+router.add("/contact", "/pages/contact.html");
+router.add("/404", "/pages/404.html");
 
-function handle(){
-    //const pathname = window.location.pathname;
-    const {pathname} = window.location;//desestruturação
-    //const {pathname, href, host, port} = window.location;//desestruturação multipla
-    const route = routes[pathname] || routes["/404"];
+router.handle();
 
-    fetch(route)
-        .then(data => data.text())
-        .then(html => {
-            document.querySelector("#app").innerHTML = html;
-        });
-}
-
-handle();
-
-window.onpopstate = () => handle();
-window.route = route;
+window.onpopstate = () => router.handle();
+window.route = () => router.route();
