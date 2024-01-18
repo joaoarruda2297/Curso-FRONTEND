@@ -1,32 +1,63 @@
+import { GthubUser } from "./GitHubUser.js";
+
 export class Favorites{
     constructor(root){
         this.root = document.querySelector(root);
         this.load();
     }
     load(){
-        this.entries = [
-            {
-                login: 'joaoarruda2297',
-                name: "João Arruda",
-                public_repos: '76',
-                followers: '9589',
-            },
-            {
-                login: 'diego3g',
-                name: "Diego Fernandes",
-                public_repos: '50',
-                followers: '22500',
+        this.entries = JSON.parse(localStorage.getItem('@github-favorites:')) || [];
+
+    }
+
+    save(){
+        localStorage.setItem('@github-favorites:', JSON.stringify(this.entries));
+    }
+    async add(username){
+        try{
+            const userExists = this.entries.find((user) => {
+                return user.login === username;
+            });
+            if(userExists){
+                throw new Error("Usuário já foi adicionado");
             }
-        ];
+            const user = await GthubUser.search(username);
+            if(user.login === undefined){
+                throw new Error("Usuário não encontrado");
+            }
+            this.entries = [user, ...this.entries];
+            this.update();
+            this.save();
+
+        } catch(error){
+            alert(error.message);
+        }
+    }
+    delete(user){
+        const filteredEntries = this.entries.filter((entry) => {
+            return entry.login !== user.login;
+        });
+
+        this.entries = filteredEntries;
+        this.save();
     }
 }
 
 export class FavoritesView extends Favorites{
     constructor(root){
-        super(root);
+        super(root);//forma de ligar a classe pai com a classe filha
         this.tbody = this.root.querySelector("table tbody");
         this.update()
-        //forma de ligar a classe pai com a classe filha
+        this.onadd();
+    }
+
+    onadd(){
+        const addButton = this.root.querySelector('.search button');
+        addButton.onclick = () => {
+            const value = this.root.querySelector('.search input').value;
+            this.add(value);
+            this.root.querySelector('.search input').value = "";
+        }
     }
     
     update(){
@@ -41,6 +72,15 @@ export class FavoritesView extends Favorites{
             row.querySelector('.user span').textContent = user.login;
             row.querySelector('.repositories').textContent = user.public_repos;
             row.querySelector('.followers').textContent = user.followers;
+
+            //nao usamos listener pq é um clique único
+            row.querySelector('.remove').onclick = () => {
+                const isOk = confirm(`Deseja remover ${user.name}?`);
+                if(isOk){
+                    this.delete(user);
+                    this.update();
+                }
+            };
 
             this.tbody.appendChild(row);
         });
