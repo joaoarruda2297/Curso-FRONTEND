@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 62.5%;
+    --hue: 194;
+    --bg-color: hsl(0, 0%, 0%);
+    --bg-button-color: hsl(var(--hue), 91%, 25%);
+    --bg-header: hsl(var(--hue), 72%, 13%);
+    --bg-first-line: hsla(var(--hue), 64%, 6%, 0.5);
+    --bg-second-line: hsl(var(--hue), 65%, 7%);
+    --text-color: hsl(var(--hue), 9%, 89%);
+    --remove-color: hsl(355, 91%, 66%);
+}
+body{
+    font-size: 1.6rem;
+    background-color: var(--bg-color);
+}
+body *{
+    color: var(--text-color);
+}
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+td img{
+    width: 3.2rem;
+}

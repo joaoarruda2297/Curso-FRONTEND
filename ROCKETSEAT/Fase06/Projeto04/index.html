@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>GitFav</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>
+                <img src="assets/Gitfav.svg" alt="Estrela entre chaves">
+            </h1>
+            <div class="search">
+                <label for="input-search" class="sr-only">Usuário do Github</label>
+                <input type="text" id="input-search" placeholder="Digite o Github username que quer favoritar">
+                <button>&star;FAVORITAR</button>
+            </div>
+        </header>
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuário</th>
+                    <th>Repositories</th>
+                    <th>Followers</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="https://github.com/maykbrito.png">
+                        <a href="https://github.com/maykbrito" target="_blank">
+                            <p>Mayk Brito</p>
+                            <span>/maykbrito</span>
+                        </a>
+                    </td>
+                    <td class="repositories">20</td>
+                    <td class="followers">300</td>
+                    <td>
+                        <button class="remove-button">Remover</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
