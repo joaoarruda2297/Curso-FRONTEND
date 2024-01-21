@@ -31,9 +31,9 @@
                     <th>Ação</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="opened-list" >
                 <tr>
-                    <td>
+                    <td class="user">
                         <img src="https://github.com/maykbrito.png">
                         <a href="https://github.com/maykbrito" target="_blank">
                             <p>Mayk Brito</p>
@@ -48,7 +48,7 @@
                 </tr>
 
                 <tr>
-                    <td>
+                    <td class="user">
                         <img src="https://github.com/maykbrito.png">
                         <a href="https://github.com/maykbrito" target="_blank">
                             <p>Mayk Brito</p>
@@ -63,7 +63,7 @@
                 </tr>
 
                 <tr>
-                    <td>
+                    <td class="user">
                         <img src="https://github.com/maykbrito.png">
                         <a href="https://github.com/maykbrito" target="_blank">
                             <p>Mayk Brito</p>
@@ -74,6 +74,16 @@
                     <td class="followers">300</td>
                     <td>
                         <button class="remove-button">Remover</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody id="empty-list" class="hide">
+                <tr id="empty">
+                    <td colspan="4">
+                        <div id="empty-content">
+                            <img src="assets/estrela.svg" alt="Estrela surpresa">
+                            <p>Nenhum favorito ainda</p>
+                        </div>
                     </td>
                 </tr>
             </tbody>
