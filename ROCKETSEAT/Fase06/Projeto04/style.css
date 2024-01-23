@@ -104,11 +104,16 @@ tbody tr:nth-child(odd){
 }
 tbody tr:nth-child(even){
     background-color: var(--bg-second-line);
+}
+tbody tr{
     border-top: 1px solid #4A808C;
-    border-bottom: 1px solid #4A808C;
+}
+tbody tr:nth-child(1){
+    border-top: none;
 }
 td img{
     width: 5.6rem;
+    border-radius: 50%;
 }
 td{
     padding: 2.4rem 2.4rem 2.4rem 4.0rem;

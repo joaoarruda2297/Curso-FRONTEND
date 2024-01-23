@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
+    <script src="./js/main.js" defer type="module"></script>
     <link rel="stylesheet" href="style.css">
     <title>GitFav</title>
 </head>
@@ -31,53 +32,9 @@
                     <th>Ação</th>
                 </tr>
             </thead>
-            <tbody id="opened-list" >
-                <tr>
-                    <td class="user">
-                        <img src="https://github.com/maykbrito.png">
-                        <a href="https://github.com/maykbrito" target="_blank">
-                            <p>Mayk Brito</p>
-                            <span>/maykbrito</span>
-                        </a>
-                    </td>
-                    <td class="repositories">20</td>
-                    <td class="followers">300</td>
-                    <td>
-                        <button class="remove-button">Remover</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="user">
-                        <img src="https://github.com/maykbrito.png">
-                        <a href="https://github.com/maykbrito" target="_blank">
-                            <p>Mayk Brito</p>
-                            <span>/maykbrito</span>
-                        </a>
-                    </td>
-                    <td class="repositories">20</td>
-                    <td class="followers">300</td>
-                    <td>
-                        <button class="remove-button">Remover</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="user">
-                        <img src="https://github.com/maykbrito.png">
-                        <a href="https://github.com/maykbrito" target="_blank">
-                            <p>Mayk Brito</p>
-                            <span>/maykbrito</span>
-                        </a>
-                    </td>
-                    <td class="repositories">20</td>
-                    <td class="followers">300</td>
-                    <td>
-                        <button class="remove-button">Remover</button>
-                    </td>
-                </tr>
+            <tbody id="opened-list" class="hide">
             </tbody>
-            <tbody id="empty-list" class="hide">
+            <tbody id="empty-list">
                 <tr id="empty">
                     <td colspan="4">
                         <div id="empty-content">
