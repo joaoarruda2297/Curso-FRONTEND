@@ -67,7 +67,7 @@ export class FavoritesView extends Favorites{
         this.entries.forEach((user) => {
             const tableRow = this.createRow();
             tableRow.querySelector("img").src = `https://github.com/${user.login}.png`;
-            tableRow.querySelector("a").href = `https://github.com/${user.name}`;
+            tableRow.querySelector("a").href = `https://github.com/${user.login}`;
             tableRow.querySelector("p").innerText = user.name;
             tableRow.querySelector("span").innerText = user.login;
             tableRow.querySelector(".repositories").innerText = user.public_repos;
