@@ -20,6 +20,7 @@ export const Profile = styled.div`
     display: flex;
     align-items: center;
 
+    //img dentro de profile
     > img {
         width: 56px;
         height: 56px;
@@ -37,6 +38,7 @@ export const Profile = styled.div`
             color: ${({theme}) => theme.COLORS.GRAY_100};
         }
 
+        //aqui nao precisa de > pq é muito especifico ja
         strong{
             font-size: 18px;
             color: ${({theme}) => theme.COLORS.WHITE};
