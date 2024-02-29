@@ -17,7 +17,7 @@ export function Header(){
                     <strong>João Arruda</strong>
                     <a href="/">sair</a>
                 </div>
-                <UserImg/>
+                <HeaderUserImg/>
             </Profile>
         </Container>
     );

@@ -42,7 +42,7 @@ export const Profile = styled.div`
     }
 `;
 
-export const UserImg = styled(UserImg)`
+export const HeaderUserImg = styled(UserImg)`
     > img{
         width: 64px;
         height: 64px;
