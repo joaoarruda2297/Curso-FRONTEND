@@ -1,6 +1,6 @@
-import { Container, Profile } from "./styles";
+import { Container, Profile, HeaderUserImg } from "./styles";
 import { Input } from "../Input";
-import { FiMail } from 'react-icons/fi';
+import { UserImg } from "../UserImg";
 
 export function Header(){
     return(
@@ -17,7 +17,7 @@ export function Header(){
                     <strong>João Arruda</strong>
                     <a href="/">sair</a>
                 </div>
-                <img src="https://github.com/joaoarruda2297.png" alt="Imagem do Github (do usuário)" />
+                <UserImg/>
             </Profile>
         </Container>
     );

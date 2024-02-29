@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { UserImg } from '../UserImg';
 
 export const Container = styled.header`
     grid-area: header;
@@ -39,13 +40,16 @@ export const Profile = styled.div`
             white-space: nowrap;
         }
     }
+`;
+
+export const UserImg = styled(UserImg)`
     > img{
         width: 64px;
         height: 64px;
         border-radius: 50%;
-
+    
         border: 1px solid ${({theme}) => theme.COLORS.STROKE};
-
+    
         margin-left: 9px;
     }
 `;
