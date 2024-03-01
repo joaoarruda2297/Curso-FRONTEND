@@ -32,4 +32,18 @@ export const Content = styled.div`
             margin-bottom: 2px;
         }
     }
+
+    > .movie-creator{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+
+    > .tags{
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        margin: 40px 0;
+    }
 `;
