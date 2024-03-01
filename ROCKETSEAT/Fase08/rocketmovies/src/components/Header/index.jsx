@@ -1,4 +1,4 @@
-import { Container, Profile, HeaderUserImg } from "./styles";
+import { Container, Profile } from "./styles";
 import { Input } from "../Input";
 import { UserImg } from "../UserImg";
 
@@ -17,7 +17,7 @@ export function Header(){
                     <strong>João Arruda</strong>
                     <a href="/">sair</a>
                 </div>
-                <HeaderUserImg/>
+                <UserImg size="64"/>
             </Profile>
         </Container>
     );

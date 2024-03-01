@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { UserImg } from '../UserImg';
 
 export const Container = styled.header`
     grid-area: header;
@@ -24,6 +23,7 @@ export const Container = styled.header`
 export const Profile = styled.div`
     display: flex;
     align-items: center;
+    gap: 9px;
 
     > div{
         font-size: 14px;
@@ -39,17 +39,5 @@ export const Profile = styled.div`
         strong{
             white-space: nowrap;
         }
-    }
-`;
-
-export const HeaderUserImg = styled(UserImg)`
-    > img{
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
-    
-        border: 1px solid ${({theme}) => theme.COLORS.STROKE};
-    
-        margin-left: 9px;
     }
 `;
