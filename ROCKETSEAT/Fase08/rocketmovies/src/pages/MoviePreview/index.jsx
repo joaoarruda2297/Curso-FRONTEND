@@ -2,6 +2,7 @@ import { Container, Content } from "./styles";
 import { Header } from "../../components/Header";
 import { ButtonText } from "../../components/ButtonText";
 import { Stars } from "../../components/Stars";
+import { UserImg } from "../../components/UserImg";
 
 export function MoviePreview(){
     return(
@@ -18,7 +19,7 @@ export function MoviePreview(){
                     </div>
 
                     <div className="movie-creator">
-                        
+                        <UserImg size={16}/>
                     </div>
 
                 </Content>
