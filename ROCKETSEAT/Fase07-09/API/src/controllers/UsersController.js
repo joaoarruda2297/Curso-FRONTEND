@@ -45,7 +45,6 @@ class UsersController{
         console.log("cheguei")
 
         if(userWithUpdatedEmail && userWithUpdatedEmail.id !== user.id){
-            console.log("entrei denoo")
             throw new AppError("Este email já está em uso!");
         }
 
