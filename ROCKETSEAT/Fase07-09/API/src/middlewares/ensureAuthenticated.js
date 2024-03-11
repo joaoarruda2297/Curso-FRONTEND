@@ -23,3 +23,5 @@ function ensureAuthenticated(request, response, next){
         throw new AppError("JWToken inválido");
     }
 }
+
+module.exports = ensureAuthenticated;
