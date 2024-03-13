@@ -3,7 +3,7 @@ const multer = require("multer");
 const crypto = require("crypto");//estamos usando o hash do crypto para que nao ocorra nomes iguais para os arquivos de imagem
 
 const TMP_FOLDER = path.resolve(__dirname, "..", "..", "tmp");
-const UPLOADS_FOLDER = path.resolve(__dirname, "uploads");
+const UPLOADS_FOLDER = path.resolve(TMP_FOLDER, "uploads");
 
 const MULTER = {
     storage: multer.diskStorage({
