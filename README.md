@@ -72,5 +72,7 @@
         - Funcionalidades de integração
         - Hooks
         - States
+        - LocalStorage
+        - Effects
 
 
