@@ -1,4 +1,7 @@
 const AppError = require("../utils/AppError");
+const {hash} = require("bcrypt");
+
+const sqliteConnection = require("../database/sqlite");
 
 class UsersController{
     /* FORMA PADRÂO DE UM CONTROLLER
@@ -8,13 +11,24 @@ class UsersController{
     * update - PUT para atualizar um registro
     * delete - DELETE para remover um registro
     */
-    create(req,res){
-        const {name, email} = req.body;
+    async create(req,res){
+        const {name, email, password} = req.body;
 
-        if(!name){
-            throw new AppError("Nome é obrigatório!", 404);
+        const database = await sqliteConnection();
+        const checkUserExist = await database.get("SELECT * FROM users WHERE email = (?)", [email]);
+
+        if(checkUserExist){
+            throw new AppError("Este e-mail já está em uso.", 401);
         }
-        res.status(201).json({name,email});
+
+        const hashedPassword = await hash(password,8);//o metodo hash é assincrono, pois demora para criptografar, logo precisa de um await
+
+        await database.run(
+            "INSERT INTO users (name,email,password) VALUES (?,?,?)", 
+            [name, email, hashedPassword]
+        );//a diferença entre .run e .get é que um devolve um parametro, enquanto o outro só roda
+
+        return res.status(201).json();
 
     }
 
