@@ -33,7 +33,38 @@ class UsersController{
     }
 
     async update(req, res){
-        //precisa atualizar no banco de dados
+        const {name, email} = req.body;
+        const {id} = req.params;
+
+        const database = await sqliteConnection();
+        const user = await database.get("SELECT * FROM users WHERE id = (?)", [id]);
+
+        //verificando se o usuario realmente existe
+        if(!user){
+            throw new AppError("Usuário não encontrado");
+        }
+
+        //verificando se está tentando trocar para um email que já está em uso
+        const userWithUpdatedEmail = await database.get("SELECT * FROM users WHERE email = (?)", [email]);
+        if(userWithUpdatedEmail && userWithUpdatedEmail.id !== id){
+            throw new AppError("Este email já está em uso!");
+        }
+
+        //isso é uma boa prática, mas não é necessário.
+        //Eu poderia colocar name e email no update de baixo...
+        user.name = name;
+        user.email = email;
+
+        await database.run(`
+            UPDATE users SET
+            name = ?,
+            email = ?,
+            updated_at = ?,
+            WHERE id = ?`,
+            [user.name, user.email, new Date(), id]
+        );
+
+        return res.status(200).json();
     }
 }
 
