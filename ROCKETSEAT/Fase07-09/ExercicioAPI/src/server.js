@@ -1,14 +1,16 @@
 require("express-async-errors");
-const express = require("express");
 const AppError = require("./utils/AppError");
 const migrationsRun = require("./database/sqlite/migrations");
 const uploadConfig = require("./configs/upload");
 
+const cors = require("cors");
+const express = require("express");
 const routes = require("./routes");
 
 migrationsRun();
 
 const app = express();
+app.use(cors());
 app.use(express.json());//dizendo a forma que vai receber as coisas
 
 app.use("/files", express.static(uploadConfig.UPLOADS_FOLDER));
