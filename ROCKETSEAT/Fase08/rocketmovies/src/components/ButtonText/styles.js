@@ -7,5 +7,6 @@ export const Container = styled.div`
         align-items: center;
         color: ${({theme}) => theme.COLORS.PINK};
         gap: 8px;
+        background-color: transparent;
     }
 `;
