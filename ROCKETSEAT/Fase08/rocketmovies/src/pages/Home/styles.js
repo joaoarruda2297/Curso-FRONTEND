@@ -20,7 +20,7 @@ export const Container = styled.div`
             justify-content: space-between;
             align-items: center;
 
-            > Button{
+            > .addMovie{
                 width: 207px;
             }
         }

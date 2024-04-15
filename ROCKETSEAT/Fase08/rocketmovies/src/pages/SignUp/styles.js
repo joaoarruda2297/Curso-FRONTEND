@@ -34,11 +34,11 @@ export const Form = styled.form`
     > div{//refere-se ao input
         margin-bottom: 10px;
     }
-    > a{
+    > .backSignIn{
         margin-top: 42px;
         color: ${({theme}) => theme.COLORS.PINK};
     }
-    > button{
+    > .addUser{
         margin-top: 14px;
     }
 `;
