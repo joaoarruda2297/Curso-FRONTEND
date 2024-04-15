@@ -4,7 +4,7 @@ import { Tag } from "../Tag";
 
 export function Card({title, value, text, ...rest}){
     return(
-        <Container>
+        <Container to="/moviePreview">
             <div className="card-header">
                 <h1>{title}</h1>
                 <Stars value={value}/>

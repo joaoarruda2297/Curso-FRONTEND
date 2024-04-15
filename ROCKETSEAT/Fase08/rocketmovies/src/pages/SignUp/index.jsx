@@ -32,9 +32,9 @@ export function SignUp(){
                     icon={FiLock}
                 />
 
-                <Button title="Cadastrar"/>
+                <Button title="Cadastrar" className="addUser"/>
                 
-                <Link to="/">
+                <Link to="/" className="backSignIn">
                     <FaArrowLeft/> Voltar para o login
                 </Link>
             </Form>

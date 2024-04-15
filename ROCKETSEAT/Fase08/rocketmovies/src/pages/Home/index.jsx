@@ -13,9 +13,11 @@ export function Home(){
                 <div id="little-header">
                     <h1>Meus filmes</h1>
                     
-                    <Button 
+                    <Button
+                        className="addMovie"
                         title="Adicionar filme" 
                         children={<FiPlus />}
+                        to="/newMovie"
                     />
                 </div>
 
