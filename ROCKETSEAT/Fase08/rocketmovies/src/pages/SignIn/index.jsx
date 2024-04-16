@@ -4,9 +4,7 @@ import { Button } from "../../components/Button";
 import { FiMail, FiLock } from 'react-icons/fi';
 import {Link} from "react-router-dom";
 
-import { api } from "../../services/api";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 
 export function SignIn(){
