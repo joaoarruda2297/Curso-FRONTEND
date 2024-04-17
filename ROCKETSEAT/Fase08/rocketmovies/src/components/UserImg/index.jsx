@@ -1,9 +1,9 @@
 import { Container } from "./styles";
 
-export function UserImg({to,size}){
+export function UserImg({to,size,src}){
     return(
         <Container size={size} to={to}>
-            <img src="https://github.com/joaoarruda2297.png" alt="User image" />
+            <img src={src} alt="User image" />
         </Container>
     );
 }
