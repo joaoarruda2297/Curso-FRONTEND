@@ -21,7 +21,7 @@ export const Container = styled.header`
     }
 `;
 
-export const Profile = styled(Link)`
+export const Profile = styled.div`
     display: flex;
     align-items: center;
     gap: 9px;
@@ -33,11 +33,11 @@ export const Profile = styled(Link)`
         flex-direction: column;
         align-items: end;
 
-        a{
+        .logoutButton{
             color: ${({theme}) => theme.COLORS.GRAY_100}
         }
 
-        strong{
+        .userName{
             white-space: nowrap;
         }
     }

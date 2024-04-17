@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Container = styled.div`
+export const Container = styled(Link)`
     > img{
         width: ${({size}) => `${size ?? 64}px`};
         height: ${({size}) => `${size ?? 64}px`};
