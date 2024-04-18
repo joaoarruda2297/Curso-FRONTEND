@@ -6,7 +6,14 @@ import { UserImg } from "../../components/UserImg";
 import { CiClock2 } from "react-icons/ci";
 import { Tag } from "../../components/Tag";
 
+import { useAuth } from "../../hooks/auth";
+import { api } from "../../services/api";
+
 export function MoviePreview(){
+    const {user} = useAuth();
+
+    const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
+
     return(
         <Container>
             <Header/>
@@ -21,7 +28,7 @@ export function MoviePreview(){
                     </div>
 
                     <div className="movie-creator">
-                        <UserImg size={16}/>
+                        <UserImg size={16} src={avatarURL} to="/profile"/>
                         <span>Por João Arruda</span>
                         <CiClock2 />
                         <span>23/05/22 às 8:00</span>
