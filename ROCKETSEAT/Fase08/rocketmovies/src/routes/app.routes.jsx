@@ -9,9 +9,10 @@ export function AppRoutes(){
     return(
         <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/newMovie" element={<CreateMovie/>}/>
-            <Route path="/moviePreview" element={<MoviePreview/>}/>
+            <Route path="/new-movie" element={<CreateMovie/>}/>
+            <Route path="/movie-preview" element={<MoviePreview/>}/>
             <Route path="/profile" element={<Profile/>}/>
+            <Route path="*" element={<div>404 not found</div>}/>
         </Routes>
     );
 }

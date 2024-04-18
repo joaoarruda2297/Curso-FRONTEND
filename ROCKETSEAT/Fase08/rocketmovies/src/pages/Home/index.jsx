@@ -17,7 +17,7 @@ export function Home(){
                         className="addMovie"
                         title="Adicionar filme" 
                         children={<FiPlus />}
-                        to="/newMovie"
+                        to="/new-movie"
                     />
                 </div>
 

@@ -24,7 +24,7 @@ export function Header(){
             <Profile>
                 <div>
                     <Link className="userName" to="/profile">{user.name}</Link>
-                    <a className="logoutButton" onClick={signOut}>sair</a>
+                    <Link className="logoutButton" onClick={signOut} to="/">sair</Link>
                 </div>
                 <UserImg to="/profile" size={64} src={avatarURL}/>
             </Profile>
