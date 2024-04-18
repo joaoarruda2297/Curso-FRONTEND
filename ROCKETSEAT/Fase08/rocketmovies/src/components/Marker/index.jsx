@@ -1,9 +1,9 @@
 import { Container } from "./styles";
 import { FiPlus, FiX } from "react-icons/fi";
 
-export function Marker({value, onClick, isNew, ...rest}){
+export function Marker({isNew, value, onClick, ...rest}){
     return(
-        <Container isNew={isNew}>
+        <Container $isNew={isNew}>
             <input 
                 type="text"
                 readOnly={!isNew}

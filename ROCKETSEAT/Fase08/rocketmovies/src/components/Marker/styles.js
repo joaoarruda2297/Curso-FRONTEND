@@ -5,8 +5,8 @@ export const Container = styled.div`
     align-items: center;
     padding: 16px;
     border-radius: 10px;
-    background-color: ${({theme,isNew}) => isNew ? "transparent" : theme.COLORS.GRAY_300};
-    border: ${({ theme, isNew}) => isNew ? `2px dashed ${theme.COLORS.GRAY_100}` : "none"};
+    background-color: ${({$isNew, theme}) => $isNew ? "transparent" : theme.COLORS.GRAY_300};
+    border: ${({$isNew, theme}) => $isNew ? `2px dashed ${theme.COLORS.GRAY_100}` : "none"};
     
     > input, button{
         border: none;
@@ -15,10 +15,10 @@ export const Container = styled.div`
 
     > input{
         color: ${({theme}) => theme.COLORS.WHITE};
-        cursor: ${({isNew}) => isNew? "text" : "auto"};
+        cursor: ${({$isNew}) => $isNew? "text" : "auto"};
 
         &::placeholder{
-            color: ${({ theme}) => theme.COLORS.GRAY_100};
+            color: ${({theme}) => theme.COLORS.GRAY_100};
         }
     }
     
