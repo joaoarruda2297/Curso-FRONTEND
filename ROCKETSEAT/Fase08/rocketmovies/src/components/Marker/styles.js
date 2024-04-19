@@ -24,6 +24,7 @@ export const Container = styled.div`
     
     > button{
         color: ${({theme}) => theme.COLORS.PINK};
+        align-self: flex-end;
     }
 
 
