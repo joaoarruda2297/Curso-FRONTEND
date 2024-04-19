@@ -45,8 +45,10 @@ export const Content = styled.div`
         width: 100%;
 
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
-        gap: 24px;
+        align-content: flex-start;
+        gap: 16px;
 
         padding: 16px;
         border-radius: 8px;
