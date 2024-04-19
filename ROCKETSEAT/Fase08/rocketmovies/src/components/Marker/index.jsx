@@ -3,7 +3,10 @@ import { FiPlus, FiX } from "react-icons/fi";
 
 export function Marker({isNew, value, onClick, ...rest}){
     return(
-        <Container $isNew={isNew}>
+        <Container 
+            $isNew={isNew}
+            {...rest}
+            >
             <input 
                 type="text"
                 readOnly={!isNew}
