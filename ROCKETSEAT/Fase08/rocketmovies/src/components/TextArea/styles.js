@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.textarea`
+export const TextArea = styled.textarea`
     background-color: ${({theme}) => theme.COLORS.GRAY_300};
     border: none;
     border-radius: 10px;
