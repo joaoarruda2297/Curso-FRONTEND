@@ -5,6 +5,7 @@ export const AuthContext = createContext({});
 
 function AuthProvider({children}){
     const [data,setData] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
 
     async function signIn({email, password}){
         try{
@@ -14,8 +15,8 @@ function AuthProvider({children}){
             localStorage.setItem("@rocketmovies:user", JSON.stringify(user));
             localStorage.setItem("@rocketmovies:token", token);
 
-            api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
             setData({user, token});//guardando no state
+
         }
         catch(error){
             if(error.response){
@@ -65,12 +66,23 @@ function AuthProvider({children}){
         const user = localStorage.getItem("@rocketmovies:user");
 
         if(token && user){
-            api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
             setData({
                 token,
                 user: JSON.parse(user)
             });
         }
+            
+        setIsLoading(false);
+
+        const handleLogout =  () => {
+            api.defaults.headers.common['Authorization'] = undefined
+            localStorage.removeItem("@rocketmovies:token");
+            localStorage.removeItem("@rocketmovies:user");
+            setData({});
+        }
+        window.addEventListener('sessionExpired', handleLogout)
+
+        return () => window.removeEventListener('sessionExpired', handleLogout)
     }, []);
 
     return(
@@ -78,7 +90,8 @@ function AuthProvider({children}){
             signIn,
             signOut,
             updateProfile,
-            user: data.user
+            user: data.user,
+            isLoading,
             }}>
             {children}
         </AuthContext.Provider>
