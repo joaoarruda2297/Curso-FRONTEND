@@ -29,12 +29,14 @@ export function CreateMovie(){
         setMarker(prevState => prevState.filter((_,index) => index !== indexDelete));
     }
     async function handleSubmitMovie(){
+        if(newMarker){
+            return alert("Você deixou um marcador preenchido mas não foi adicionado. Clique no botão de + para adiciona-lo.")
+        }
         if(!title || !rating || !comment){
             return alert("Preencha todos os campos!");
         }
         await api.post("/moviesnotes", {title, description: comment, rating, tags: marker});
         alert("Filme cadastrado com sucesso!");
-        handleDeleteMovie();
         navigate("/");
     }
     function handleDeleteMovie(){
