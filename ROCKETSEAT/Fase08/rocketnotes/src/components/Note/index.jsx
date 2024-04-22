@@ -1,9 +1,9 @@
-import {Container} from "./styles";7
+import {Container} from "./styles";
 import {Tag} from "../Tag";
 
 export function Note({data, ...rest}){
     return(
-        <Container>
+        <Container {...rest}>
             <h1>{data.title}</h1>
             {
                 data.tags &&
