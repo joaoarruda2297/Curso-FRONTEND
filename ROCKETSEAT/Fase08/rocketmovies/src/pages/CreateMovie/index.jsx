@@ -7,6 +7,9 @@ import { Marker } from "../../components/Marker";
 import { Button } from "../../components/Button";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { api } from "../../services/api";
 
 export function CreateMovie(){
     const [marker,setMarker] = useState([]);
@@ -16,6 +19,7 @@ export function CreateMovie(){
     const [rating, setRating] = useState("");
     const [comment, setComment] = useState("");
     
+    const navigate = useNavigate();
 
     function handleAddMarker(){
         setMarker(prevState => [...prevState, newMarker]);
@@ -24,8 +28,14 @@ export function CreateMovie(){
     function handleDeleteMarker(indexDelete){
         setMarker(prevState => prevState.filter((_,index) => index !== indexDelete));
     }
-    function handleSubmitMovie(){
-
+    async function handleSubmitMovie(){
+        if(!title || !rating || !comment){
+            return alert("Preencha todos os campos!");
+        }
+        await api.post("/moviesnotes", {title, description: comment, rating, tags: marker});
+        alert("Filme cadastrado com sucesso!");
+        handleDeleteMovie();
+        navigate("/");
     }
     function handleDeleteMovie(){
         setMarker([]);
@@ -55,7 +65,15 @@ export function CreateMovie(){
                             value={rating}
                             placeholder="Sua nota (de 0 a 5)"
                             type="text"
-                            onChange={e=> setRating(e.target.value)}
+                            onChange={e=> {
+                                const ratingValue = e.target.value;
+                                if(ratingValue.length === 0 || (!isNaN(ratingValue) && ratingValue >= 0 && ratingValue <= 5)){
+                                    setRating(ratingValue);
+                                }
+                                else{
+                                    alert("Este campo só aceita números de 0 a 5");
+                                }
+                            }}
                         />
                     </div>
 
