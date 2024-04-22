@@ -66,7 +66,7 @@ export function SignUp(){
 
                 <Button title="Cadastrar" onClick={handleSignUp}/>
 
-                <Link to="/">
+                <Link class="backLogin" to="/login">
                     Voltar para o login
                 </Link>
             </Form>

@@ -33,7 +33,7 @@ export const Form = styled.form`
         color: ${({theme}) => theme.COLORS.GRAY_100};
     }
 
-    > a{
+    > .backLogin{
         margin-top: 124px;
         color: ${({theme}) => theme.COLORS.ORANGE};
     }
