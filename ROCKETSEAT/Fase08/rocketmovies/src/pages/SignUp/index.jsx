@@ -24,7 +24,7 @@ export function SignUp(){
         api.post("/users", {name, email, password})
             .then(()=>{
                 alert("Usuário cadastrado com sucesso!");
-                navigate("/");
+                navigate("/login");
             })
             .catch(error=>{
                 if(error.response){
@@ -71,7 +71,7 @@ export function SignUp(){
                     onClick={handleSignUp}
                 />
                 
-                <Link to="/" className="backSignIn">
+                <Link to="/login" className="backSignIn">
                     <FaArrowLeft/> Voltar para o login
                 </Link>
             </Form>
