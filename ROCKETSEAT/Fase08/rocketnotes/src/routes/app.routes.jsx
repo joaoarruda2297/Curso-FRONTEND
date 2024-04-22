@@ -12,6 +12,7 @@ export function AppRoutes(){
             <Route path="/new" element={<New />}/>
             <Route path="/profile" element={<Profile />}/>
             <Route path="/details/:id" element={<Details />}/>
+            <Route path="*" element={<div>404 not found</div>}/>
         </Routes>
     );
 }

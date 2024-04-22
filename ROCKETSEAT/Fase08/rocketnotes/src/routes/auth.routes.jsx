@@ -8,6 +8,7 @@ export function AuthRoutes(){
         <Routes>
             <Route path="/" element={<SignIn />}/>
             <Route path="/register" element={<SignUp />}/>
+            <Route path="*" element={<div>404 not found</div>}/>
         </Routes>
     );
 }
