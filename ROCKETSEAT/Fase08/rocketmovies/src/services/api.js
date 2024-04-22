@@ -11,7 +11,7 @@ api.interceptors.response.use((response) => response, (error) => {
     }
 
     return Promise.reject(error);
-})
+});
 
 api.interceptors.request.use((request) => {
     const token = localStorage.getItem("@rocketmovies:token");
@@ -20,4 +20,4 @@ api.interceptors.request.use((request) => {
         request.headers.Authorization = `Bearer ${token}`;
 
     return request
-})
+});
