@@ -21,6 +21,11 @@ export const Content = styled.div`
     height: 600px;
     padding: 0 16px 0 0;
 
+    > .headButtons{
+        display: flex;
+        justify-content: space-between;
+    }
+
     > .movie-title{
         display: flex;
         flex-direction: row;
