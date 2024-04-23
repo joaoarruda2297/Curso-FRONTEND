@@ -13,7 +13,7 @@ export const appRoutes = [
     element: <CreateMovie/>
 },
 {
-    path: '/movie-preview',
+    path: '/movie-preview/:id',
     element: <MoviePreview/>
 },
 {
