@@ -3,6 +3,7 @@ import { ButtonText } from "../../components/ButtonText";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { FiUser, FiMail, FiLock, FiCamera } from 'react-icons/fi';
+import { FaArrowLeft } from "react-icons/fa6";
 
 import {useState} from "react";
 import {useAuth} from "../../hooks/auth";
@@ -44,7 +45,11 @@ export function Profile(){
     return(
         <Container>
             <header>
-                <ButtonText/>
+                <ButtonText
+                    title="Voltar"
+                    icon={<FaArrowLeft />}
+                    to="/"
+                />
             </header>
             <Form>
                 <Avatar>
