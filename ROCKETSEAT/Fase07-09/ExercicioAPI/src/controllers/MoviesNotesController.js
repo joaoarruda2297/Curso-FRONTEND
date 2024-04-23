@@ -12,15 +12,18 @@ class MoviesNotesController{
             user_id
         });
 
-        const tagsInsert = tags.map(name => {
-            return{
-                note_id,
-                user_id,
-                name
-            }
-        });
+        if(tags.length !== 0){
+            const tagsInsert = tags.map(name => {
+                return{
+                    note_id,
+                    user_id,
+                    name
+                }
+            });
 
-        await knex("movie_tags").insert(tagsInsert);
+            await knex("movie_tags").insert(tagsInsert);
+        }
+
 
         return res.json();        
     }
