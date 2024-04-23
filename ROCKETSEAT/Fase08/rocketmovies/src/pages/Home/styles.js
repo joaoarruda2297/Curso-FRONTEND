@@ -10,7 +10,7 @@ export const Container = styled.div`
     > main{
         grid-area: content;
         padding: 40px 123px;
-        max-width: 1100px;
+        width: 1100px;
 
         justify-self: center;
 
