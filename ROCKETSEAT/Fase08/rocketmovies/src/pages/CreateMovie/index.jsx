@@ -5,6 +5,7 @@ import { Input } from "../../components/Input";
 import { TextArea } from "../../components/TextArea";
 import { Marker } from "../../components/Marker";
 import { Button } from "../../components/Button";
+import { FaArrowLeft } from "react-icons/fa6";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -53,7 +54,12 @@ export function CreateMovie(){
 
             <main>
                 <Content>
-                    <ButtonText/>
+                    <ButtonText
+                        title="Voltar"
+                        icon={<FaArrowLeft />}
+                        to="/"
+                    />
+
                     <h1>Novo filme</h1>
                     <div className="twoInputs">
                         <Input
