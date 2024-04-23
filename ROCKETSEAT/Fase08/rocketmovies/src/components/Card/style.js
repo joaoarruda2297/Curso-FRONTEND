@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
-export const Container = styled(Link)`
+export const Container = styled.a`
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_700};
     border-radius: 16px;
     padding: 32px;
-    height: 222.85px;
+    height: auto;
 
     > .card-header h1{
         margin-bottom: 8px;
@@ -29,6 +28,7 @@ export const Container = styled(Link)`
         display: flex;
         flex-direction: row;
         gap: 8px;
+        flex-wrap: wrap;
 
         div{
             background-color: ${({theme}) => theme.COLORS.BLACK};
