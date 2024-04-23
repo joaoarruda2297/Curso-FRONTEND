@@ -7,7 +7,7 @@ import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
 
-export function Header(){
+export function Header({onChange}){
     const {signOut, user} = useAuth();
 
     const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
@@ -19,6 +19,7 @@ export function Header(){
             <Input
                 placeholder = "Pesquisar pelo título"
                 type = "text"
+                onChange={onChange}
             />
 
             <Profile>
