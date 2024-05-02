@@ -1,5 +1,5 @@
 const AppError = require("../utils/AppError");
-const {hash, compare} = require("bcrypt");
+const {hash} = require("bcrypt");
 
 class UserCreateService{
     constructor(userRepository){
@@ -20,5 +20,7 @@ class UserCreateService{
         return userCreated;
     }
 }
+
+
 
 module.exports = UserCreateService;
