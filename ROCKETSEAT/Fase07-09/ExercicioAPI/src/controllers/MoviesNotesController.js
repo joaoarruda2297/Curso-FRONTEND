@@ -1,28 +1,16 @@
 const knex = require("../database/knex");
+const MoviesNotesRepository = require("../repositories/MoviesNotesRepository");
+const MoviesNotesCreateService = require("../services/moviesnotes/MoviesNotesCreateService");
 
 class MoviesNotesController{
     async create(req,res){
         const {title, description, rating, tags} = req.body;
         const user_id = req.user.id;
+        const moviesNotesRepository = new MoviesNotesRepository();
+        const moviesNotesCreateService = new MoviesNotesCreateService(moviesNotesRepository);
 
-        const [note_id] = await knex("movie_notes").insert({
-            title,
-            description,
-            rating,
-            user_id
-        });
-
-        if(tags.length !== 0){
-            const tagsInsert = tags.map(name => {
-                return{
-                    note_id,
-                    user_id,
-                    name
-                }
-            });
-
-            await knex("movie_tags").insert(tagsInsert);
-        }
+        await moviesNotesCreateService.execute({title, description, rating, tags, user_id});
+        
 
 
         return res.json();        
