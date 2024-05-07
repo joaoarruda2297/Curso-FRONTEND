@@ -74,5 +74,9 @@
         - States
         - LocalStorage
         - Effects
+    - Testes unitários com jest
+ - **Fase10:** Autenticação e Autorização
+    - Atributo role no backend
+    - Filtrando usuários no frontend
 
 
