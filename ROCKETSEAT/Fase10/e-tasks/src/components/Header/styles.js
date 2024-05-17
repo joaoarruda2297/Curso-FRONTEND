@@ -18,9 +18,8 @@ export const Container = styled.header`
 `;
 
 export const Menu = styled.button`
-  background-color: none;
+  background-color: transparent;
   border: none;
-  display: none;
 
   > svg{
     font-size: 2.5rem;
