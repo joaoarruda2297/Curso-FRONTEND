@@ -20,13 +20,14 @@ export const Container = styled.header`
 export const Menu = styled.button`
   background-color: transparent;
   border: none;
+  display: none;
 
   > svg{
     font-size: 2.5rem;
     color: ${({theme}) => theme.COLORS.BLUE_200};
+  }
 
-    @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
-      display: block;
-    }
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
+    display: block;
   }
 `;
